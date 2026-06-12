@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Overwrite slate colors with elegant dark grays and blacks */
+  --color-slate-50: #0f0f10;
+  --color-slate-105: #161618;
+  --color-slate-200: #242426;
+  --color-slate-300: #3a3a3e;
+  --color-slate-400: #5a5a5e;
+  --color-slate-500: #8a8a8e;
+  --color-slate-600: #8a8a8e;
+  --color-slate-700: #e5e5e7;
+  --color-slate-800: #242426;
+  --color-slate-900: #0f0f10;
+  --color-slate-950: #0a0a0b;
+
+  /* Overwrite blue and indigo and default brand accents with the Sophisticated Gold/Bronze color #A08050 */
+  --color-blue-50: #161618;
+  --color-blue-100: #202022;
+  --color-blue-500: #a08050;
+  --color-blue-600: #a08050;
+  --color-blue-700: #8a6c3f;
+  --color-blue-800: #705030;
+  --color-blue-900: #0f0f10;
+  --color-blue-950: #0a0a0b;
+
+  --color-indigo-50: #161618;
+  --color-indigo-100: #202022;
+  --color-indigo-500: #a08050;
+  --color-indigo-600: #a08050;
+  --color-indigo-650: #a08050;
+  --color-indigo-700: #8a6c3f;
+  --color-indigo-800: #705030;
+  --color-indigo-900: #0f0f10;
+  --color-indigo-950: #0a0a0b;
+
+  --color-emerald-50: #122218;
+  --color-emerald-500: #a08050;
+  --color-emerald-600: #8a6c3f;
+  --color-emerald-700: #8a8a8e;
+
+  --bg-savant-dark: #0a0a0b;
+  --bg-savant-sidebar: #0f0f10;
+  --bg-savant-card: #0f0f10;
+  --colors-savant-border: #242426;
+  --colors-savant-gold: #a08050;
+  --colors-savant-light-gold: #c3ad8b;
+  --colors-savant-text-primary: #e5e5e7;
+  --colors-savant-text-secondary: #8a8a8e;
+  --colors-savant-text-muted: #5a5a5e;
+}
+
+/* Custom Accessibility & Accessibility-Focus Ring Styles (WCAG 2.1 Standards) */
+*:focus-visible {
+  outline: 3px solid #a08050;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for seamless applet interactions */
+* {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a0a0b;
+  color: #e5e5e7;
+}
+
+/* Forced override tags to ensure background is always beautiful Sophisticated Dark */
+html, body {
+  background-color: #0a0a0b !important;
+}
+
+/* Scrollbar styles for detailed tables/logs */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242426;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3e;
+}
+
+/* Custom gold aura glow matches premium aesthetic */
+.cbse-glow {
+  box-shadow: 0 0 25px -5px rgba(160, 128, 80, 0.15);
+}

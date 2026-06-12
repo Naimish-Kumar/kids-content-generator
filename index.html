@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Global error interceptor to prevent third-party browser-extension errors
+      // (such as getManifest errors from injected polyfills) from crashing the environment.
+      window.addEventListener('error', function(event) {
+        try {
+          const msg = event.message || '';
+          const errorStr = (event.error && event.error.stack) || '';
+          if (
+            msg.includes('browser_polyfill_default') ||
+            msg.includes('getManifest') ||
+            msg.includes('extension') ||
+            errorStr.includes('browser_polyfill_default') ||
+            errorStr.includes('getManifest')
+          ) {
+            console.warn('Caught and suppressed third-party extension error:', msg);
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        } catch (e) {
+          // Fallback safe catch
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function(event) {
+        try {
+          const msg = (event.reason && event.reason.message) || '';
+          const errorStr = (event.reason && event.reason.stack) || '';
+          if (
+            msg.includes('browser_polyfill_default') ||
+            msg.includes('getManifest') ||
+            msg.includes('extension') ||
+            errorStr.includes('browser_polyfill_default') ||
+            errorStr.includes('getManifest')
+          ) {
+            console.warn('Caught and suppressed third-party extension promise rejection:', msg);
+            event.stopImmediatePropagation();
+            event.preventDefault();
+          }
+        } catch (e) {
+          // Fallback safe catch
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

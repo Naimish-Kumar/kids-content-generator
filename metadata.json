@@ -1,0 +1,6 @@
+{
+  "name": "CBSE Quiz and Lesson Plan Generator",
+  "description": "An interactive education content generator that designs personalized CBSE lesson plans, generates quizzes, and tracks student progress and teacher analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
